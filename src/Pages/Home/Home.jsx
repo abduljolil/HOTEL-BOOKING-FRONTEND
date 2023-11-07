@@ -1,6 +1,9 @@
  
+ 
+import Dining from '../../components/Dining';
 import Featured from '../../components/Featured';
-import Offer from '../../components/Offer';
+import Offers from '../../components/Offers';
+ 
 import Testimonials from '../../components/Testimonials';
 import Bannar from './../../components/Bannar';
 
@@ -8,7 +11,9 @@ const Home = () => {
     return (
         <div>
             <Bannar></Bannar>
-            <Offer></Offer>
+            <Dining></Dining>
+           <Offers></Offers>
+        
             <Featured></Featured>
             <Testimonials></Testimonials>
         </div>
