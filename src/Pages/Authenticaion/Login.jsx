@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
+import Swal from "sweetalert2";
 
  
  
@@ -21,17 +22,32 @@ const Login = () => {
         singIn(email,Password)
         .then(result=>{
           const loginUser =result.user;
+          Swal.fire({
+            title: 'Success!',
+            text: 'Do you want to continue',
+            icon: 'success',
+            confirmButtonText: 'Cool'
+          })
           navigate (location?.state?location?.state:'/');
           console.log(loginUser);
         })
-        .catch((error) =>console.log(error));
+        .catch((error) =>{
+          Swal.fire({
+            title: ' error!',
+            text: `${error}`,
+            icon: 'error',
+            confirmButtonText: 'Cool'
+          })
+          console.log(error)});
     }
     const handleGoogle = ()=>{
       googleSingIn()
       .then(res=>{
         console.log(res.user)
+        navigate('/')
       })
       .catch(error=>{
+      
         console.error(error)
       })
     }

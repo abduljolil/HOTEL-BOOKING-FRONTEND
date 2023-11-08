@@ -11,7 +11,7 @@ const Offers = () => {
 
 
     useEffect(()=>{
-         fetch('assingment-11-backend.vercel.app/offer')
+         fetch('https://assingment-11-three.vercel.app/offer')
         .then(res=>res.json())
         .then(data=>setOffers(data))
     },[])

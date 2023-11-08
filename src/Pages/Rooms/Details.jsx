@@ -20,7 +20,7 @@ const Details = () => {
         }
         console.log(object);
 
-          fetch("http://localhost:5000/booking", {
+          fetch("https://assingment-11-three.vercel.app/booking", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -84,7 +84,7 @@ const Details = () => {
                 <h2>Price Per Night: $ {price_per_night}</h2>
                 <h2>Room Size: {room_size}</h2>
                 <h3>Availability: {availability}</h3>
-               <p>Date:<input onSubmit={(e)=>setDate(e.target.value)} type="date" name="date" /></p>
+               <p>Date:<input onChange={(e)=>setDate(e.target.value)} type="date" name="date" /></p>
                 </div>
               
                 

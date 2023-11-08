@@ -7,9 +7,8 @@ import Swal from "sweetalert2";
  
 
 const MyBookings = () => {
-   
     const [books,setBooks]= useState([]);
-    const url ="assingment-11-backend.vercel.app/booking";
+    const url ="https://assingment-11-three.vercel.app/booking";
      useEffect(()=>{
 
       axios.get(url)
@@ -31,7 +30,7 @@ const MyBookings = () => {
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`assingment-11-backend.vercel.app/booking/${id}`,{
+        fetch(`https://assingment-11-three.vercel.app/${id}`,{
           method:'DELETE'
         })
         .then(res=>res.json())
@@ -42,7 +41,7 @@ const MyBookings = () => {
               'Your file has been deleted.',
               'success'
             )
-            const remaining = books.filter(booking=> booking._id !== id);
+            const remaining = books.filter(booking=> booking._id !== _id);
             setBooks(remaining)
         })
        
@@ -52,33 +51,6 @@ const MyBookings = () => {
 
 }
 
-const handleUpdate = id=>{
-  fetch(`assingment-11-backend.vercel.app/booking/${id}`,{
-    method:'PATCH',
-    headers:{
-      'content-type':'application/json'
-    },
-    body:JSON.stringify({status:'confirm'})
-  })
-  .then(res=>res.json())
-  .then(data=>{
-    console.log(data)
-    if(data.modifiedCount > 0){
-      Swal.fire({
-        title: 'Update Success!',
-        text: 'Do you want to continue',
-        icon: 'success',
-        confirmButtonText: 'Cool'
-      })
-      const remaining = books.filter(books=>books._id !== _id);
-      const updated = books.find(bookings=> bookings._id === _id);
-      updated.status='confirm';
-      const newBook =[updated,...remaining];
-      setBooks(newBook);
-
-    }
-  })
-}
 
     return (
         <div className="overflow-x-auto w-full">
@@ -96,7 +68,7 @@ const handleUpdate = id=>{
             </tr>
           </thead>
           <tbody>
-           {books.map(book=><BookingNow  key={book._id} book={book} handleUpdate={handleUpdate} handleDelete={handleDelete} ></BookingNow>)}
+           {books.map(book=><BookingNow  key={book._id} book={book}   handleDelete={handleDelete} ></BookingNow>)}
           </tbody>
         
           

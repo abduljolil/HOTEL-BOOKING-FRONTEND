@@ -7,10 +7,10 @@ const Rooms = () => {
     const [rooms,setRooms]=useState([]);
    const [price,setPrice]=useState([]);
     useEffect(()=>{
-        fetch('assingment-11-backend.vercel.app/rooms?sortField=price&&sortOrder)
+        fetch(`https://assingment-11-three.vercel.app/rooms?sortField=price_per_night&&sortOrder=${price}`)
         .then(res=>res.json())
         .then(data=>setRooms(data))
-    },[])
+    },[price])
 
 
     return (

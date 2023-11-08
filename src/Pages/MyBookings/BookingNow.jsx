@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
+
  
 
-const BookingNow = ({handleUpdate,handleDelete, book}) => {
+const BookingNow = ({ handleDelete, book}) => {
    
     console.log(book);
     return (
@@ -26,7 +28,7 @@ const BookingNow = ({handleUpdate,handleDelete, book}) => {
          <button onClick={()=> handleDelete(book._id)}  className="btn btn-success">delete</button>
         </th>
         <th>
-         <button onClick={()=> handleUpdate(book._id)}  className="btn btn-success">updated</button>
+         <Link to={`/update/${ book._id}`}><button className="btn btn-success">updated</button></Link>
         </th>
       </tr>
 

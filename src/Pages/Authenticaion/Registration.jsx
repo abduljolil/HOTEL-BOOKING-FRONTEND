@@ -19,6 +19,12 @@ const Registration = () => {
           .then(res=>{
             const user = res.user;
             console.log(user);
+            Swal.fire({
+              title: 'Success!',
+              text: 'Do you want to continue',
+              icon: 'success',
+              confirmButtonText: 'Cool'
+            })
              navigate('/');
           })
           .catch(error =>console.log(error));
