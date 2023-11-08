@@ -21,20 +21,8 @@ const Login = () => {
         singIn(email,Password)
         .then(result=>{
           const loginUser =result.user;
-          const user ={email};
+          navigate (location?.state?location?.state:'/');
           console.log(loginUser);
-          console.log(user);
-          // get access token
-          axios.post('http://localhost:5000/jwt',user,{
-            withCredentials:true
-          })
-          .then(res=>{
-            console.log(res.data)
-            if(res.data.success){
-              navigate (location?.state?location?.state:'/');
-            }
-          })
-
         })
         .catch((error) =>console.log(error));
     }

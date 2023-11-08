@@ -33,13 +33,13 @@ import Details from "../Pages/Rooms/Details";
            
         },
         {
-          path:'/bookings',
+          path:'/booking',
           element:<MyBookings></MyBookings>
         },
         {
           path:'/rooms/:id',
           element:<Details></Details>,
-          loader:({params})=>fetch(`http://localhost:5000/rooms/${params.id}`)
+          loader:({params})=>fetch(`assingment-11-backend.vercel.app/rooms/${params.id}`)
         }
       ]
     },

@@ -2,7 +2,9 @@
 
 const Testimonials = () => {
     return (
-        <div className="w-full border   bg-base-100 shadow-xl my-10 p-10">
+        <div  data-aos="flip-left"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="2000" className="w-full border   bg-base-100 shadow-xl my-10 p-10">
             <div className="grid items-center justify-center">
                 <img className=" w-56 h-56 p-5 border-2 border-black rounded-full" src="https://i.ibb.co/YWmx0Md/icon-social-proof-testimonials.png" alt="" />
                 

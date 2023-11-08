@@ -8,7 +8,7 @@ const Rooms = () => {
     const [rooms,setRooms]=useState([]);
 
     useEffect(()=>{
-        fetch('http://localhost:5000/rooms')
+        fetch('assingment-11-backend.vercel.app/rooms')
         .then(res=>res.json())
         .then(data=>setRooms(data))
     },[])

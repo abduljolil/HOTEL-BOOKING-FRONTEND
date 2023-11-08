@@ -2,7 +2,7 @@
 
 const Bannar = () => {
    return (
-       <div  className="carousel w-full h-[600px]">
+       <div data-aos="fade-down"  className="carousel w-full h-[600px]">
        <div id="slide1" className="carousel-item relative w-full">
          <img src='https://i.ibb.co/1ZF0ntB/lobby.jpg' className="w-full rounded-lg" />
          <div className="absolute flex justify-center transform -translate-y-1/2 left-5 right-10 bottom-1">
