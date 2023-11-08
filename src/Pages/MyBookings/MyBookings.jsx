@@ -18,6 +18,8 @@ const MyBookings = () => {
       })
      },[url])
 
+    
+
      const handleDelete = id =>{
       Swal.fire({
       title: 'Are you sure?',

@@ -1,13 +1,21 @@
-import axios from "axios";
+// import axios from "axios";
 
  
-const instance = axios.create({
-    baseURL: 'http://localhost:5000/',
-    withCredentials:true,
-  });
+// const instance = axios.create({
+//     baseURL: 'assingment-11-backend.vercel.app/',
+//     withCredentials:true,
+//   });
 
-const useAxios = () => {
-    return instance;
-};
+// const useAxios = () => {
 
-export default useAxios;
+//   axios.interceptors.response.use(function (response) {
+    
+//     return response;
+//   }, function (error) {
+ 
+//     return  console.log((error));
+//   });
+//     return instance;
+// };
+
+// export default useAxios;
