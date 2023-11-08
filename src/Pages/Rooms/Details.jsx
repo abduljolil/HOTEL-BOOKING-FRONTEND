@@ -1,19 +1,19 @@
  
+import { useState } from "react";
 import { useLoaderData,  } from "react-router-dom";
 import Swal from "sweetalert2";
 
  
 
 const Details = () => {
+
+  const [date,setDate]=useState([]);
     const  room = useLoaderData();
     const {title,description,room_size,price_per_night,
       profile_img,thumble_img1,thumble_img2,availability}=room;
 
     
-      const handleBooking = (e)=>{
-        e.preventDefault();
-        const date =e.target.date.value;
-
+      const handleBooking = ()=>{
         const object={
           title,description,room_size, price_per_night,
         profile_img,thumble_img1,thumble_img2,availability,date 
@@ -84,7 +84,7 @@ const Details = () => {
                 <h2>Price Per Night: $ {price_per_night}</h2>
                 <h2>Room Size: {room_size}</h2>
                 <h3>Availability: {availability}</h3>
-               <p>Date:<input type="date" name="date" /></p>
+               <p>Date:<input onSubmit={(e)=>setDate(e.target.value)} type="date" name="date" /></p>
                 </div>
               
                 
