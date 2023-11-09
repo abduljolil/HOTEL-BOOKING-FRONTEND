@@ -38,7 +38,7 @@ import Review from "../components/Review";
         {
           path:'/update/:id',
           element:<Update></Update>,
-          loader:({params})=>fetch(`https://assingment-11-three.vercel.app/booking/${params.id}`)
+          loader:({params})=>fetch(`https://assinment-server.vercel.app/booking/${params.id}`)
         },
         {
           path:'/booking',
@@ -46,13 +46,13 @@ import Review from "../components/Review";
         },
         {
           path:'/rooms/:id',
-          element:<Details></Details>,
-          loader:({params})=>fetch(`https://assingment-11-three.vercel.app/rooms/${params.id}`)
+          element:<PrivateRoute><Details></Details></PrivateRoute>,
+          loader:({params})=>fetch(`https://assinment-server.vercel.app/rooms/${params.id}`)
         },
         {
           path:'/review/:id',
           element:<Review></Review>,
-          loader:({params})=>fetch(`https://assingment-11-three.vercel.app/rooms/${params.id}`)
+          loader:({params})=>fetch(`https://assinment-server.vercel.app/rooms/${params.id}`)
         }
       ]
     },

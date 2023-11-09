@@ -20,7 +20,7 @@ const Details = () => {
         }
         console.log(object);
 
-          fetch("https://assingment-11-three.vercel.app/booking", {
+          fetch("https://assinment-server.vercel.app/booking", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

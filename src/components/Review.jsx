@@ -7,7 +7,7 @@ const Review = () => {
     const handleReview = id=>{
         console.log(id);
       
-          fetch(`https://assingment-11-three.vercel.app/rooms/${id}`,{
+          fetch(`https://assinment-server.vercel.app/rooms/${id}`,{
             method:'PUT',
             headers:{
               'content-type':'application/json'

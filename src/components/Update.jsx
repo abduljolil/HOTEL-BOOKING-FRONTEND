@@ -8,7 +8,7 @@ const Update = () => {
 const handleUpdate = _id=>{
   console.log(_id);
 
-    fetch(`https://assingment-11-three.vercel.app/booking/${_id}`,{
+    fetch(`https://assinment-server.vercel.app/booking/${_id}`,{
       method:'PATCH',
       headers:{
         'content-type':'application/json'

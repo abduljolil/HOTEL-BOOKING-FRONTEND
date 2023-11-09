@@ -8,7 +8,7 @@ import Swal from "sweetalert2";
 
 const MyBookings = () => {
     const [books,setBooks]= useState([]);
-    const url ="https://assingment-11-three.vercel.app/booking";
+    const url ="https://assinment-server.vercel.app/booking";
      useEffect(()=>{
 
       axios.get(url)
@@ -31,7 +31,7 @@ const MyBookings = () => {
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://assingment-11-three.vercel.app/booking/${id}`,{
+        fetch(`https://assinment-server.vercel.app/booking/${id}`,{
           method:'DELETE'
         })
         .then(res=>res.json())
