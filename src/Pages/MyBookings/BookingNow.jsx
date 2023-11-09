@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
  
 
 const BookingNow = ({ handleDelete, book}) => {
-   
     console.log(book);
     return (
         <tr>

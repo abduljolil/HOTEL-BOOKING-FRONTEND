@@ -20,6 +20,7 @@ const MyBookings = () => {
     
 
      const handleDelete = id =>{
+      console.log(id);
       Swal.fire({
       title: 'Are you sure?',
       text: "You won't be able to revert this!",
@@ -30,7 +31,7 @@ const MyBookings = () => {
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://assingment-11-three.vercel.app/${id}`,{
+        fetch(`https://assingment-11-three.vercel.app/booking/${id}`,{
           method:'DELETE'
         })
         .then(res=>res.json())
@@ -41,7 +42,7 @@ const MyBookings = () => {
               'Your file has been deleted.',
               'success'
             )
-            const remaining = books.filter(booking=> booking._id !== _id);
+            const remaining = books.filter(booking=> booking._id !== id);
             setBooks(remaining)
         })
        
@@ -62,7 +63,7 @@ const MyBookings = () => {
               <th>Service</th>
               <th>Date</th>
               <th>Price</th>
-              <th>reviwe</th>
+              <th>Reviews</th>
               <th>OrderDelete</th>
               <th>OrderUpdate</th>
             </tr>

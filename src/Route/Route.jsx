@@ -35,9 +35,9 @@ import Update from "../components/Update";
            
         },
         {
-          path:'/update/:id',
+          path:'/booking/:id',
           element:<Update></Update>,
-          loader:({params})=>fetch(`https://assingment-11-three.vercel.app/update/${params.id}`)
+          loader:({params})=>fetch(`https://assingment-11-three.vercel.app/booking/${params.id}`)
         },
         {
           path:'/booking',

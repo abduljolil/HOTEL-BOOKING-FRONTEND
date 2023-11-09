@@ -84,7 +84,7 @@ const Details = () => {
                 <h2>Price Per Night: $ {price_per_night}</h2>
                 <h2>Room Size: {room_size}</h2>
                 <h3>Availability: {availability}</h3>
-               <p>Date:<input onChange={(e)=>setDate(e.target.value)} type="date" name="date" /></p>
+               <p>Date:<input onChange={(e)=>setDate(e.target.value)} type="date" name="date" required /></p>
                 </div>
               
                 

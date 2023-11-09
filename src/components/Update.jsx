@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
-
- 
-
 const Update = () => {
-   const books = useLoaderData();
+   const booking = useLoaderData();
+   const [update,setUpdate]=useState([]);
+   console.log(booking);
     
 const handleUpdate = id=>{
+  console.log(id);
 
     fetch(`https://assingment-11-three.vercel.app/booking/${id}`,{
       method:'PATCH',
@@ -25,11 +25,11 @@ const handleUpdate = id=>{
           icon: 'success',
           confirmButtonText: 'Cool'
         })
-        const remaining = books.filter(books=>books._id !== _id);
-        const updated = books.find(bookings=> bookings._id === _id);
+        const remaining = booking.filter(books=>books._id !== id);
+        const updated = booking.find(bookings=> bookings._id === id);
         updated.status='confirm';
         const newBook =[updated,...remaining];
-        setBooks(newBook);
+        setUpdate(newBook);
   
       }
     })
@@ -42,7 +42,7 @@ const handleUpdate = id=>{
             <label className="label">
             <span className="label-text">Email</span>
             </label>
-            <input type="text"   name='date' defaultValue={books.date}   className="input input-bordered" required />
+            <input type="text"   name='date' defaultValue={booking.date}   className="input input-bordered" required />
             </div>
              <button onClick={handleUpdate} className="btn btn-success">UpDate</button>
           </form>
