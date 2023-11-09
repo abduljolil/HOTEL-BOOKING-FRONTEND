@@ -11,6 +11,7 @@ import Home from "../Pages/Home/Home";
 import Details from "../Pages/Rooms/Details";
 import PrivateRoute from './PrivatRoute';
 import Update from "../components/Update";
+import Review from "../components/Review";
   const router = createBrowserRouter([
     {
       path: "/",
@@ -35,7 +36,7 @@ import Update from "../components/Update";
            
         },
         {
-          path:'/booking/:id',
+          path:'/update/:id',
           element:<Update></Update>,
           loader:({params})=>fetch(`https://assingment-11-three.vercel.app/booking/${params.id}`)
         },
@@ -46,6 +47,11 @@ import Update from "../components/Update";
         {
           path:'/rooms/:id',
           element:<Details></Details>,
+          loader:({params})=>fetch(`https://assingment-11-three.vercel.app/rooms/${params.id}`)
+        },
+        {
+          path:'/review/:id',
+          element:<Review></Review>,
           loader:({params})=>fetch(`https://assingment-11-three.vercel.app/rooms/${params.id}`)
         }
       ]

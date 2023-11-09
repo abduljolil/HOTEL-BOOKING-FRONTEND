@@ -5,15 +5,15 @@ const Update = () => {
    const [update,setUpdate]=useState([]);
    console.log(booking);
     
-const handleUpdate = id=>{
-  console.log(id);
+const handleUpdate = _id=>{
+  console.log(_id);
 
-    fetch(`https://assingment-11-three.vercel.app/booking/${id}`,{
+    fetch(`https://assingment-11-three.vercel.app/booking/${_id}`,{
       method:'PATCH',
       headers:{
         'content-type':'application/json'
       },
-      body:JSON.stringify({status:'confirm'})
+      body:JSON.stringify({update})
     })
     .then(res=>res.json())
     .then(data=>{
@@ -35,17 +35,9 @@ const handleUpdate = id=>{
     })
   }
     return (
-        <div>
-              
-          <form>
-          <div className="form-control">
-            <label className="label">
-            <span className="label-text">Email</span>
-            </label>
-            <input type="text"   name='date' defaultValue={booking.date}   className="input input-bordered" required />
-            </div>
-             <button onClick={handleUpdate} className="btn btn-success">UpDate</button>
-          </form>
+        <div className="max-h-screen text-center"> 
+          <p>NewDate:<input onChange={(e)=>setUpdate(e.target.value)} type="date" name=" date" required /></p>
+          <button onClick={handleUpdate} className="btn btn-success">UpDate</button>
         </div>
     );
 };

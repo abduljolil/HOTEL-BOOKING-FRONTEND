@@ -21,7 +21,7 @@ const BookingNow = ({ handleDelete, book}) => {
         <td>${book.price_per_night
         }</td>
         <th>
-         <button className="btn btn-success">reviwe</button>
+         <Link  to={`/review/${ book._id}`}><button className="btn btn-success">reviwe</button></Link>
         </th>
         <th>
          <button onClick={()=> handleDelete(book._id)}  className="btn btn-success">delete</button>
